@@ -1,0 +1,44 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Welcome to Crun.ch.</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link href="../static/css/signupstyle.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: black">
+<div class="container" style="background:#000000" align="center">
+	<h1>Create An Account!</h1>
+
+ <div class="container" style="background:#181818; border:1px solid #D4AF8F; width: 60%; padding-bottom: 10px"  align="center">
+       <form action="../signup/signup_page" method="POST">
+          <div class="form-group">
+	         <label for="fullname">Full Name:</label>
+	         <input type="text" id="fullname" class="form-control" name="fullname" placeholder="Full Name">
+		   </div>
+       	   <div class="form-group">
+	         <label for="uname">Email Address:</label>
+	         <input type="email" id="uname" class="form-control" name="email" placeholder="{{ error1 }}">
+		   </div>
+           <div class="form-group">
+	         <label for="username">Username:</label>
+	         <input type="text" id="username" class="form-control" name="username" placeholder="{{ error2 }}">
+		   </div>
+	       <div class="form-group">
+ 	         <label for="pwds">Password:</label>
+	         <input type="password" id="pwds" class="form-control" name="password" placeholder="Password">
+		   </div>
+          <button type="submit"> Submit </button>
+       </form>
+</div>
+	</div>
+</body>
+</html>
+{% endblock %}

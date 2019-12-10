@@ -1,0 +1,117 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap - Prebuilt Layout</title>
+
+<!-- Bootstrap -->
+<link href="../static/css/detailstyle.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body bgcolor="#000000">
+
+	<!-- Header -->
+	<div class="header">
+	  <div class="logo">
+		<a href="{{ url_for('index') }}"><img src="../static/images/logo2.png" width="275" height="60" alt=""/></a>
+	  </div>
+	  <div class="search">
+		<form class="search" action="../search/search_page" method="POST" style="justify-content: center; padding-top: 15px; padding-left: 1300px;">
+			<div class="form-group">
+				<input type="text" id="search" class="form-control" name="search_criteria" placeholder="Search...">
+			</div>
+		</form>
+	  </div>
+	  <div class="submit">
+		<form style="justify-content: center; padding-top: 16px; padding-left: 10px;">
+			<button type="submit" name="search" > Submit </button>
+		</form>
+	  </div>
+	</div>
+
+	<!-- Navigation Bar -->
+	<div class="navbar">
+	  <a href="#">Link</a>
+	  <a href="#">Link</a>
+	  <a href="#">Link</a>
+	  <a href="#">Link</a>
+	</div>
+
+	<div class="main" align="center">
+        <div class="left">
+            <div class="movie_title">
+                <h2>{{ movie_title }}</h2>
+            </div>
+            <div class="poster_box">
+                <img src="{{ poster_link }}"/>
+            </div>
+            <div class="stats">
+
+            </div>
+
+        </div>
+        <div class="info">
+            <p>Runtime: {{ runtime }}</p>
+            <p>Start Year: {{ start_year }}</p>
+            <p>Genres: {{ genres }}</p>
+            <p>Plot: {{ plot_text }}</p>
+            <div class="cast" style="display: flex; flex-wrap: wrap">
+                <div class="directors">
+                    <h3>Directors</h3>
+                    <ul>
+                    {% for i in cast %}
+                        {% if cast[i]["category"] == "director" %}
+                            <li>{{ cast[i]["name"] }}
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="writers" style="padding-left: 20px;">
+                    <h3>Writers</h3>
+                    <ul>
+                    {% for i in cast %}
+                        {% if cast[i]["category"] == "writer" %}
+                            <li>{{ cast[i]["name"] }}
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="producers" style="padding-left: 20px;">
+                    <h3>Producers</h3>
+                    <ul>
+                    {% for i in cast %}
+                        {% if cast[i]["category"] == "producer" %}
+                            <li>{{ cast[i]["name"] }}
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+                <div class="actors" style="padding-left: 20px;">
+                    <h3>Actors</h3>
+                    <ul>
+                    {% for i in cast %}
+                        {% if cast[i]["category"] == "actor" %}
+                            <li>{{ cast[i]["name"] }} : {% for j in cast[i]["characters"] %}{{ j }}{% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+	</div>
+	
+	
+</body>
+</html>
+{% endblock %}

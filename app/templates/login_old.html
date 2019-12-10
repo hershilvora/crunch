@@ -1,0 +1,15 @@
+{% block content %}
+<html>
+    <h1 style="font-family: Courier; font-size: 500%; color: white; text-align: center">Login</h1>
+    <body style="background-color: #2b80ff; padding: 150px 500px ;">
+        <form action = '/login/login_page' method="POST" style="background-color: gray; background-repeat: no-repeat; font-family: Courier; font-size: 140%; color: white; text-align: center">
+            Email:     <input type="text" name="email" style="border: 2px solid gray; border-radius: 4px; width: 40%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box"><br>
+            Password:  <input type="text" name="password" style="border: 2px solid gray; border-radius: 4px; width: 40%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box"><br>
+            <input type="image" src="http://i38.photobucket.com/albums/e122/novafire7/login_zpsuixnziyc.png" name="login" style="padding: 0 60px; width: 40%; height: 10%">
+        </form>
+        {% if error %}
+            <p class=error><strong>Alert:</strong> {{ error }}
+        {% endif %}
+    </body>
+</html>
+{% endblock %}

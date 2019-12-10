@@ -1,0 +1,41 @@
+
+ This is n example of a series of calls you would make when inserting something.  This is from the create_user route in
+ api.users.
+
+    myDb = Database.dbConnection()
+    *This creates the database connection and sets it to this variable.
+
+
+    print(myDb)
+    *Just confirms that the database connection is successful.
+        It'll look something like this: <mysql.connector.connection.MySQLConnection object at 0x042691D0>
+
+
+    sqlString = "INSERT INTO users (email, userName, passwordHash, fullName) VALUES (%s, %s, %s, %s)"
+    *This is your sql query string.  There are a bunch of commands, but its pretty straight forward what it all is.
+
+    Another example would be: sqlString_Email = "SELECT email FROM users WHERE email = " + "'" + email + "'"
+
+    *If there's something else you want to do, try looking it up first, there may be built in method in MySQL that makes
+        it a lot easier.
+
+    values = (email, userName, passwordHash, fullName)
+    *This is the variable that i mentioned in the other example database.py file.  This is if you are trying to select or
+        insert many variables into the sql query string.  As you can see in the insert statement above, here values
+        would be is replaced by %s for strings.  With select statements you have to put the values in '' for it to work.
+
+    result = Database.execStatement(myDb, sqlString, values)
+    *This calls the function from the database.py file to execute your query.  I set it to a result variable because the
+        function returns the result and it's great for debugging when you need to see what you got from your query.
+
+    myDb.commit()
+    *This commit statement only has to be called when you are inserting.  If you are selecting, you don't commit.
+
+ Overall, the process is pretty much the same for any other type of query you want to do.  All you really have to change
+ is the sqlString and values if necessary.
+
+ The way i've set it up so far, all of the database calls are done in an api file.  So api.users or api.movie_search for
+ example.
+
+ So, if you need to create a function that queries the database, either add it to one of the existing files if you think
+ it fits there, or just create another file in api.

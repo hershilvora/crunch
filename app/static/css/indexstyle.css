@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+.button-login
+{
+	font-family:  Verdana;
+	font-size: 33px;
+	background-color: #181818;
+	text-align: center;
+	border-color: #D4AF8F;
+	text-align: center;
+	color: white;
+	padding: 50px 200px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+}
+
+.button-login:hover
+{
+	border-color: #D4AF37;
+	background-color: #D4AF37;
+	color:#000000;
+}
+
+.button-signup
+{
+	font-family:  Verdana;
+	font-size: 33px;
+	background-color: #181818;
+	text-align: center;
+	border-color: #D4AF8F;
+	text-align: center;
+	color: white;
+	padding: 50px 180px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+}
+
+.button-signup:hover
+{
+	border-color: #D4AF37;
+	background-color: #D4AF37;
+	color:#000000;
+}
+

@@ -1,0 +1,18 @@
+{% block content %}
+<html>
+    <h1 style="font-family: Courier; font-size: 500%; color: white; text-align: center">Email Push</h1>
+    <body style="background-color: #2b80ff; padding: 150px 500px;">
+    <h2 style="font-family: Courier; font-size: 200%; color: white; text-align: center">Text Input</h2>
+    <form name="E-Mail" action="/newsletter/result" method="POST" style="background-color: gray; background-repeat: no-repeat; font-family: Courier; font-size: 140%; color: white; text-align: center">
+        Subject:<br>
+            <input type="text" name="subject" style="border: 2px solid gray; border-radius: 4px; width: 70%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;" value={{request.form.subject}}>
+        <br>
+        Message:<br>
+            <textarea name="email" cols="100" rows="20" style="border: 2px solid gray; border-radius: 4px; width: 90%; padding: 12px 20px; margin: 8px 0; box-sizing: border-box;" value={{request.form.email}}></textarea>
+        <br><br>
+        <button type = 'submit'> Submit</button>
+    </form>
+
+    </body>
+</html>
+{% endblock %}

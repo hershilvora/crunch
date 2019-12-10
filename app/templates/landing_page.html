@@ -1,0 +1,25 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Landing Page</title>
+    </head>
+
+    <body style="background-color: #2b80ff;">
+    <div class="wrapper clearfix">
+        <div class="main-panel" style="padding: 150px 0">
+            <div style="text-align: center;">
+                <img src="https://i38.photobucket.com/albums/e122/novafire7/logo_zpsfthkschn.png" style="width:506px;height:133px;">
+                <img src="/app/static/assets/logo.jpg">
+            <form action= {{ url_for('signup.signup_page') }} methods="POST">
+                <input type="image" src="https://i38.photobucket.com/albums/e122/novafire7/signup_zpsjfeub9fo.png" name="signup">
+            </form>
+            <form action= {{ url_for('login.login_page') }} methods="POST">
+                <input type="image" src="http://i38.photobucket.com/albums/e122/novafire7/login_zpsuixnziyc.png" name="login">
+            </form>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+{% endblock %}

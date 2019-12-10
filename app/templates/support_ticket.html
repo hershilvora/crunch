@@ -1,0 +1,37 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Welcome to Crun.ch.</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <link href="../static/css/recommendstyle.css" rel="stylesheet">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: black">
+<div class="container" style="background:#000000" align="center">
+	<h1> Welcome Back!</h1>
+
+<div class="container" style="background:#181818; border:1px solid #D4AF8F; width: 60%; padding-bottom: 10px"  align="center">
+       <form class="tickets" action="../support/support_resolved" method="POST">
+          <div class="form-group">
+	         <label for="movie_name">Ticket To Change: </label>
+	         <input type="text" id="movie_name" class="form-control" name="ticket" placeholder="Ticket Number" value={{request.form.ticket}}>
+		   </div>
+          <button type="submit"> Submit </button>
+       </form>
+       <ul style="color: white; list-style-type: none; text-align: center">
+		{% for i in ticket %}
+  			<li>Ticket ID: {{ ticket[i]["ticket_id"] }} --> {{ ticket[i]["user"] }} --> Status: {{ ticket[i]["status"] }}</li>
+		{% endfor %}
+	   </ul>
+</div>
+	</div>
+</body>
+</html>
+{% endblock %}

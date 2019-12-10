@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* CSS Document */
+
+h1
+{
+	font-family: Verdana;
+	font-size: 38px;
+	color: #D4AF8F;
+	align-content: center;
+}
+
+input[type=email]
+{
+	border: 1px solid #D4AF8F;
+	width: 70%;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=email]:focus
+{
+	border: 2px solid #D4AF37;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=password]
+{
+	border: 1px solid #D4AF8F;
+	width: 70%;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=password]:focus
+{
+	border: 2px solid #D4AF37;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=text]
+{
+	border: 1px solid #D4AF8F;
+	width: 70%;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+input[type=text]:focus
+{
+	border: 2px solid #D4AF37;
+	border-radius: 9px;
+	background-color: #181818;
+	color: white;
+}
+
+label
+{
+	font-family: Verdana;
+	font-size: 14px;
+	color: white;
+	text-align: left;
+}
+
+button[type=submit]
+{
+	font-family: Verdana;
+	font-size: 20px;
+	background-color: #181818;
+	border:1px solid #D4AF8F;
+	color: white;
+	padding: 30px, 30px;
+	border-radius: 5px;
+	transition-duration: 0.4s;
+}
+
+button[type=submit]:hover
+{
+	background-color: #D4AF37;
+	color:#000000;
+}
